@@ -59,6 +59,22 @@ Organizations must move from "Visual Trust" to "Cryptographic Trust."
 
 ---
 
+### 🛑 Case Study B: The "Punctured Tire" Fraud
+**Risk Type:** Synthetic Evidence Injection (NIST SI-7)
+
+A demonstration of how Generative AI can be used to alter insurance evidence. The "Bad Actor" takes a photo of a pristine vehicle and uses in-painting to simulate damage.
+
+| Source of Truth (Real) | Synthetic Evidence (Attack) |
+| :---: | :---: |
+| <img src="evidence/tire-normal.jpg" width="300"> | <img src="evidence/tire-flat.jpg" width="300"> |
+| *Verified Asset* | *AI-Generated Manipulation* |
+
+**The Governance Gap:**
+Standard image uploaders do not verify **C2PA metadata** (Content Credentials). The system accepted the "Flat Tire" image as truth because it looked realistic, triggering an automated payout.
+
+**The Fix:**
+Implement **C2PA/CAI Validation** at the ingestion point to reject images lacking a cryptographic chain of custody.
+
 ## 4. Project Components
 *   `risk_register.csv`: A detailed breakdown of identified risks and their NIST controls.
 *   `governance_policy.md`: A draft "Constitution" for autonomous agent behavior.
