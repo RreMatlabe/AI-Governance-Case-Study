@@ -78,3 +78,12 @@ Implement **C2PA/CAI Validation** at the ingestion point to reject images lackin
 ## 4. Project Components
 *   `risk_register.csv`: A detailed breakdown of identified risks and their NIST controls.
 *   `governance_policy.md`: A draft "Constitution" for autonomous agent behavior.
+
+## 📸 Forensic Evidence: Synthetic Injection Attack
+
+We analyzed the metadata of the submitted claims. The "Source of Truth" confirms the vehicle was in good condition, while the "Claim Submission" shows signs of generative AI manipulation (inconsistent lighting, blurred texture on tire wall).
+
+| Source of Truth (Pre-Incident) | Claim Submission (Attack Artifact) |
+|:------------------------------:|:----------------------------------:|
+| <img src="evidence/tire-normal.jpg" width="300"> | <img src="evidence/tire-flat.jpg" width="300"> |
+| **Status:** Verified Authentic | **Status:** Flagged (High Confidence AI) |
