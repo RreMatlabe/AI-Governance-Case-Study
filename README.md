@@ -26,6 +26,24 @@ We cannot rely on code alone. We must apply **NIST SP 800-53** controls to synth
 *   **The "Constitution":** A hard-coded policy layer that overrides learned behaviors (see `governance_policy.md`).
 
 ---
+## Architecture: Chaos vs. Control
+
+```mermaid
+graph TD
+    subgraph Chaos [Current State: Moltbook Chaos]
+        style Chaos fill:#ffe6e6,stroke:#ff3333,stroke-width:2px
+        A[Agent A] -->|Reinforces Bias| B[Agent B]
+        B -->|Hallucinates| C[Agent C]
+        C -->|Malicious Injection| A
+    end
+
+    subgraph Order [Future State: Governed]
+        style Order fill:#e6f3ff,stroke:#3366ff,stroke-width:2px
+        D[Agent A] -->|Log Data| G{Governance Core}
+        G -->|Verify Identity| E[Agent B]
+        G -->|Block Threat| F[Block List]
+    end
+```
 
 ## 3. Case Study B: The "Punctured Tire" (Integrity Crisis)
 **The Scenario:**
