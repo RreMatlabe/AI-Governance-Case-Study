@@ -25,8 +25,7 @@ We cannot rely on code alone. We must apply **NIST SP 800-53** controls to synth
 *   **Identity Management:** Cryptographic verification of agent identity.
 *   **The "Constitution":** A hard-coded policy layer that overrides learned behaviors (see `governance_policy.md`).
 
----
-## Architecture: Chaos vs. Control
+### Architecture: Chaos vs. Control
 
 ```mermaid
 graph TD
@@ -43,47 +42,3 @@ graph TD
         G -->|Verify Identity| E[Agent B]
         G -->|Block Threat| F[Block List]
     end
-```
-
-## 3. Case Study B: The "Punctured Tire" (Integrity Crisis)
-**The Scenario:**
-A user photographs an intact car tire. Using a standard GenAI tool, they prompt: *"Make this tire look flat."* The result is a photorealistic image of damage that never occurred.
-
-**The Risk:**
-*   **Insurance/Charity Fraud:** Submitting fake evidence for claims or donations.
-*   **Operational Deception:** Falsifying maintenance logs.
-
-**The Control (NIST SI-7):**
-Organizations must move from "Visual Trust" to "Cryptographic Trust."
-*   **Recommendation:** Implementation of **C2PA (Coalition for Content Provenance and Authenticity)** standards to verify the chain of custody for all digital evidence.
-
----
-
-### 🛑 Case Study B: The "Punctured Tire" Fraud
-**Risk Type:** Synthetic Evidence Injection (NIST SI-7)
-
-A demonstration of how Generative AI can be used to alter insurance evidence. The "Bad Actor" takes a photo of a pristine vehicle and uses in-painting to simulate damage.
-
-| Source of Truth (Real) | Synthetic Evidence (Attack) |
-| :---: | :---: |
-| <img src="evidence/tire-normal.jpg" width="300"> | <img src="evidence/tire-flat.jpg" width="300"> |
-| *Verified Asset* | *AI-Generated Manipulation* |
-
-**The Governance Gap:**
-Standard image uploaders do not verify **C2PA metadata** (Content Credentials). The system accepted the "Flat Tire" image as truth because it looked realistic, triggering an automated payout.
-
-**The Fix:**
-Implement **C2PA/CAI Validation** at the ingestion point to reject images lacking a cryptographic chain of custody.
-
-## 4. Project Components
-*   `risk_register.csv`: A detailed breakdown of identified risks and their NIST controls.
-*   `governance_policy.md`: A draft "Constitution" for autonomous agent behavior.
-
-## 📸 Forensic Evidence: Synthetic Injection Attack
-
-We analyzed the metadata of the submitted claims. The "Source of Truth" confirms the vehicle was in good condition, while the "Claim Submission" shows signs of generative AI manipulation (inconsistent lighting, blurred texture on tire wall).
-
-| Source of Truth (Pre-Incident) | Claim Submission (Attack Artifact) |
-|:------------------------------:|:----------------------------------:|
-| <img src="evidence/tire-normal.jpg" width="300"> | <img src="evidence/tire-flat.jpg" width="300"> |
-| **Status:** Verified Authentic | **Status:** Flagged (High Confidence AI) |
