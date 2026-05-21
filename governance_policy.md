@@ -1,11 +1,12 @@
-Autonomous Agent Governance Policy
-The "Constitution"
-Document Type: Governance Policy
-Version: 1.0 — Draft / Active
-Owner: Katlego Matlabe, GRC Analyst
-Framework Alignment: NIST AI RMF · NIST SP 800-53 · C2PA
-Last Updated: May 2026
-Parent Document: The Synthetic Governance Protocol
+# Autonomous Agent Governance Policy
+## The "Constitution"
+
+**Document Type:** Governance Policy  
+**Version:** 1.0 — Draft / Active  
+**Owner:** Katlego Matlabe, GRC Analyst  
+**Framework Alignment:** NIST AI RMF · NIST SP 800-53 · C2PA  
+**Last Updated:** May 2026  
+**Parent Document:** [The Synthetic Governance Protocol](./README.md)
 
 ## 1. Purpose
 The purpose of this "Constitution" is to establish a hard-coded policy layer for autonomous agents — a set of directives that cannot be overridden by learned behaviour, peer consensus, or optimisation pressure.
